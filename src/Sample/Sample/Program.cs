@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace CFD_V21_Debug
+namespace Sample
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace CFD_V21_Debug
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Sample());
         }
     }
 }

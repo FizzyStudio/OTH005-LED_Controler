@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("CFD_Camera")]
+[assembly: AssemblyTitle("Sample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("微软中国")]
-[assembly: AssemblyProduct("CFD_Camera")]
-[assembly: AssemblyCopyright("Copyright © 微软中国 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Sample")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("bf5e5704-1c14-44d1-8e06-cc5d9c8c450b")]
+[assembly: Guid("ad86d066-a585-4a33-b088-d87cd2917cf9")]
 
 // 程序集的版本信息由下面四个值组成:
 //

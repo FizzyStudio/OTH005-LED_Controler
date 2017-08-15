@@ -5,9 +5,9 @@ using System.Text;
 using System.IO.Ports;
 using System.Windows.Forms;
 
-namespace CFD_V21_Debug
+namespace Sample
 {
-    class Device
+    public class Device
     {
         private string portName;
         private int baudRate;
@@ -32,7 +32,7 @@ namespace CFD_V21_Debug
         }
 
         /// <summary>
-        /// 连接
+        /// Connect to Serial Port
         /// </summary>
         public void Connect()
         {
@@ -44,21 +44,21 @@ namespace CFD_V21_Debug
                     serialPort.Dispose();
                 }
                 serialPort = new SerialPort(portName, baudRate);
-                serialPort.StopBits = StopBits.One;         //1位停止位
-                serialPort.Parity = Parity.None;            //无奇偶校验
-                //serialPort.RtsEnable = true;              //设置RTS
-                serialPort.ReceivedBytesThreshold = 1;    //接收缓冲区大小    
+                serialPort.StopBits = StopBits.One;                 //1位停止位
+                serialPort.Parity = Parity.None;                    //无奇偶校验
+                //serialPort.RtsEnable = true;                      //设置RTS
+                serialPort.ReceivedBytesThreshold = 1;              //接收缓冲区大小    
                 serialPort.DataReceived += serialPort_DataReceived;
                 serialPort.Open();
             }
             catch
             {
-                MessageBox.Show("设备端口连接失败，请重新尝试！~");
+                MessageBox.Show("Connect to serial port failed，please try it again.");
             }
         }
 
         /// <summary>
-        /// 断开
+        /// DisConnect
         /// </summary>
         public void DisConnect()
         {
@@ -72,12 +72,12 @@ namespace CFD_V21_Debug
             }
             catch
             {
-                MessageBox.Show("设备端口断开失败，请重新尝试！~");
+                MessageBox.Show("DisConnect failed, please try it again.");
             }
         }
 
         /// <summary>
-        /// 发送命令
+        /// Send Command
         /// </summary>
         /// <param name="cmd"></param>
         public void WriteCommand(byte[] cmd)
@@ -85,9 +85,8 @@ namespace CFD_V21_Debug
             serialPort.Write(cmd, 0, cmd.Length);
         }
 
-
         /// <summary>
-        /// 
+        /// Data Received
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
