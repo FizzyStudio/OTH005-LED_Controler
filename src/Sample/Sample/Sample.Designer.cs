@@ -47,7 +47,7 @@
             // btnConnect
             // 
             this.btnConnect.Font = new System.Drawing.Font("Georgia", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnect.Location = new System.Drawing.Point(216, 11);
+            this.btnConnect.Location = new System.Drawing.Point(200, 4);
             this.btnConnect.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(33, 34);
@@ -66,7 +66,7 @@
             "COM4",
             "COM5",
             "COM6"});
-            this.cbxPortName.Location = new System.Drawing.Point(111, 11);
+            this.cbxPortName.Location = new System.Drawing.Point(96, 10);
             this.cbxPortName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.cbxPortName.Name = "cbxPortName";
             this.cbxPortName.Size = new System.Drawing.Size(96, 25);
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 359);
+            this.ClientSize = new System.Drawing.Size(248, 292);
             this.Controls.Add(this.lbPortName);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.cbxPortName);
