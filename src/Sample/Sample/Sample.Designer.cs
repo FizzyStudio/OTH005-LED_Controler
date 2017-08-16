@@ -65,6 +65,7 @@
             this.btnConnect.Size = new System.Drawing.Size(33, 31);
             this.btnConnect.TabIndex = 12;
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // cbxPortName
             // 
@@ -171,6 +172,7 @@
             this.btnStart.TabIndex = 20;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lbDuration
             // 
