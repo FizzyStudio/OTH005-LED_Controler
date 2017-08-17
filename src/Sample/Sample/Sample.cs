@@ -48,6 +48,12 @@ namespace Sample
             {
                 usLow = 1;
             }
+            else if (ratio <= 0)
+            {
+                Stop();
+                this.isRunning = true;
+                return;
+            }
 
             int N = 2000;
 
@@ -148,6 +154,14 @@ namespace Sample
         }
 
         private void nudRatio_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.isRunning)
+            {
+                Start();
+            }
+        }
+
+        private void tbRatio_ValueChanged(object sender, EventArgs e)
         {
             if (this.isRunning)
             {

@@ -37,11 +37,10 @@
             this.nudFreq = new System.Windows.Forms.NumericUpDown();
             this.nudRatio = new System.Windows.Forms.NumericUpDown();
             this.btnStart = new System.Windows.Forms.Button();
-            this.lbDuration = new System.Windows.Forms.Label();
-            this.nudDuration = new System.Windows.Forms.NumericUpDown();
+            this.tbRatio = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.nudFreq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRatio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbRatio)).BeginInit();
             this.SuspendLayout();
             // 
             // lbPortName
@@ -143,11 +142,6 @@
             // 
             this.nudRatio.Font = new System.Drawing.Font("Georgia", 14.25F);
             this.nudRatio.Location = new System.Drawing.Point(168, 120);
-            this.nudRatio.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.nudRatio.Name = "nudRatio";
             this.nudRatio.ReadOnly = true;
             this.nudRatio.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -158,6 +152,7 @@
             0,
             0,
             0});
+            this.nudRatio.Visible = false;
             this.nudRatio.ValueChanged += new System.EventHandler(this.nudRatio_ValueChanged);
             // 
             // btnStart
@@ -171,56 +166,26 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // lbDuration
+            // tbRatio
             // 
-            this.lbDuration.AutoSize = true;
-            this.lbDuration.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDuration.Location = new System.Drawing.Point(16, 165);
-            this.lbDuration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDuration.Name = "lbDuration";
-            this.lbDuration.Size = new System.Drawing.Size(109, 23);
-            this.lbDuration.TabIndex = 21;
-            this.lbDuration.Text = "Duration(s)";
-            this.lbDuration.Visible = false;
-            // 
-            // nudDuration
-            // 
-            this.nudDuration.Font = new System.Drawing.Font("Georgia", 14.25F);
-            this.nudDuration.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudDuration.Location = new System.Drawing.Point(168, 163);
-            this.nudDuration.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.nudDuration.Minimum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudDuration.Name = "nudDuration";
-            this.nudDuration.ReadOnly = true;
-            this.nudDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudDuration.Size = new System.Drawing.Size(76, 29);
-            this.nudDuration.TabIndex = 22;
-            this.nudDuration.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudDuration.Visible = false;
+            this.tbRatio.Location = new System.Drawing.Point(12, 165);
+            this.tbRatio.Maximum = 100;
+            this.tbRatio.Name = "tbRatio";
+            this.tbRatio.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbRatio.RightToLeftLayout = true;
+            this.tbRatio.Size = new System.Drawing.Size(259, 45);
+            this.tbRatio.SmallChange = 5;
+            this.tbRatio.TabIndex = 23;
+            this.tbRatio.TickFrequency = 5;
+            this.tbRatio.Value = 1;
+            this.tbRatio.ValueChanged += new System.EventHandler(this.tbRatio_ValueChanged);
             // 
             // Sample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.nudDuration);
-            this.Controls.Add(this.lbDuration);
+            this.Controls.Add(this.tbRatio);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.nudRatio);
             this.Controls.Add(this.nudFreq);
@@ -239,7 +204,7 @@
             this.Load += new System.EventHandler(this.Sample_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudFreq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRatio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbRatio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,8 +220,7 @@
         private System.Windows.Forms.NumericUpDown nudFreq;
         private System.Windows.Forms.NumericUpDown nudRatio;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Label lbDuration;
-        private System.Windows.Forms.NumericUpDown nudDuration;
+        private System.Windows.Forms.TrackBar tbRatio;
     }
 }
 
