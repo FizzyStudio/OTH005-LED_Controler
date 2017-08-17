@@ -152,7 +152,6 @@
             0,
             0,
             0});
-            this.nudRatio.Visible = false;
             this.nudRatio.ValueChanged += new System.EventHandler(this.nudRatio_ValueChanged);
             // 
             // btnStart
