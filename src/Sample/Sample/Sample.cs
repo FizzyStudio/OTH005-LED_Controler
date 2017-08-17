@@ -41,7 +41,13 @@ namespace Sample
             int ratio = (int)nudRatio.Value;
 
             int usPeriod = 1000000 / freq;
-            int usPulse = usPeriod * 100 / ratio;
+            int usPulse = usPeriod / 100 * ratio;
+            int usLow = usPeriod - usPulse;
+            
+            if (ratio >= 100)
+            {
+                usLow = 1;
+            }
 
             int N = 2000;
 
@@ -60,14 +66,14 @@ namespace Sample
             paras[0] = 0x55;
             paras[1] = 0xAA;
             paras[2] = 0x03;
-            paras[3] = (byte)(usPeriod >> 8);
-            paras[4] = (byte)(usPeriod % 256);
+            paras[3] = (byte)(usPulse >> 8);
+            paras[4] = (byte)(usPulse % 256);
             paras[5] = (byte)(N >> 8);
             paras[6] = (byte)(N % 256);
-            paras[7] = (byte)((usPeriod - usPulse) >> 8);
-            paras[8] = (byte)((usPeriod - usPulse) % 256);
-            paras[9] = (byte)((usPeriod - usPulse) >> 8);
-            paras[10] = (byte)((usPeriod - usPulse) % 256);
+            paras[7] = (byte)(usLow >> 8);
+            paras[8] = (byte)(usLow % 256);
+            paras[9] = (byte)(usLow >> 8);
+            paras[10] = (byte)(usLow % 256);
 
             device.WriteCommand(paras);
 
@@ -94,7 +100,10 @@ namespace Sample
         private void RefreshControlers()
         {
             cbxPortName.Enabled = !device.IsOpen;
+
             btnConnect.Enabled = !this.isRunning;
+            btnConnect.Image = device.IsOpen ? global::Sample.Properties.Resources.Stop : global::Sample.Properties.Resources.Run;
+
             btnStart.Text = !this.isRunning ? "Start" : "Stop";
             btnStart.Enabled = this.device.IsOpen;
         }
@@ -103,7 +112,7 @@ namespace Sample
         {
             if (!this.device.IsOpen)
             {
-                MessageBox.Show("Please connect serialport firstly.");
+                MessageBox.Show("Please connect serial port firstly.");
             }
             else
             {
@@ -135,10 +144,15 @@ namespace Sample
                 device.PortName = cbxPortName.SelectedItem.ToString();
                 device.Connect();
             }
-            
-            btnConnect.BackgroundImage = device.IsOpen ? global::Sample.Properties.Resources.Stop : global::Sample.Properties.Resources.Run;
-            cbxPortName.Enabled = !device.IsOpen;
+            RefreshControlers();
+        }
 
+        private void nudRatio_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.isRunning)
+            {
+                Start();
+            }
         }   
 
     }

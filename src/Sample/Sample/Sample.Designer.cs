@@ -111,26 +111,27 @@
             // 
             // nudFreq
             // 
+            this.nudFreq.Enabled = false;
             this.nudFreq.Font = new System.Drawing.Font("Georgia", 14.25F);
             this.nudFreq.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudFreq.Location = new System.Drawing.Point(178, 75);
-            this.nudFreq.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
+            this.nudFreq.Location = new System.Drawing.Point(168, 75);
+            this.nudFreq.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudFreq.Minimum = new decimal(new int[] {
-            100,
+            1000,
             0,
             0,
             0});
             this.nudFreq.Name = "nudFreq";
             this.nudFreq.ReadOnly = true;
-            this.nudFreq.Size = new System.Drawing.Size(66, 29);
+            this.nudFreq.Size = new System.Drawing.Size(76, 29);
             this.nudFreq.TabIndex = 18;
             this.nudFreq.Value = new decimal(new int[] {
             1000,
@@ -141,27 +142,23 @@
             // nudRatio
             // 
             this.nudRatio.Font = new System.Drawing.Font("Georgia", 14.25F);
-            this.nudRatio.Increment = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudRatio.Location = new System.Drawing.Point(178, 120);
+            this.nudRatio.Location = new System.Drawing.Point(168, 120);
             this.nudRatio.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
             this.nudRatio.Name = "nudRatio";
             this.nudRatio.ReadOnly = true;
             this.nudRatio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudRatio.Size = new System.Drawing.Size(66, 29);
+            this.nudRatio.Size = new System.Drawing.Size(76, 29);
             this.nudRatio.TabIndex = 19;
             this.nudRatio.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
+            this.nudRatio.ValueChanged += new System.EventHandler(this.nudRatio_ValueChanged);
             // 
             // btnStart
             // 
@@ -184,6 +181,7 @@
             this.lbDuration.Size = new System.Drawing.Size(109, 23);
             this.lbDuration.TabIndex = 21;
             this.lbDuration.Text = "Duration(s)";
+            this.lbDuration.Visible = false;
             // 
             // nudDuration
             // 
@@ -193,7 +191,7 @@
             0,
             0,
             0});
-            this.nudDuration.Location = new System.Drawing.Point(178, 163);
+            this.nudDuration.Location = new System.Drawing.Point(168, 163);
             this.nudDuration.Maximum = new decimal(new int[] {
             500,
             0,
@@ -207,13 +205,14 @@
             this.nudDuration.Name = "nudDuration";
             this.nudDuration.ReadOnly = true;
             this.nudDuration.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudDuration.Size = new System.Drawing.Size(66, 29);
+            this.nudDuration.Size = new System.Drawing.Size(76, 29);
             this.nudDuration.TabIndex = 22;
             this.nudDuration.Value = new decimal(new int[] {
             100,
             0,
             0,
             0});
+            this.nudDuration.Visible = false;
             // 
             // Sample
             // 
