@@ -38,7 +38,8 @@ namespace Sample
             //  应答 AA 55 03（脉宽500us 测量光出现时间50 光化光下降沿到测量光上升沿500us 测量光下降沿到新的光化光上升沿5000us: 55AA03 01F4 0032 01F4 1388） 
 
             int freq = (int)nudFreq.Value;
-            int ratio = (int)nudRatio.Value;
+            int ratio = (int)tbRatio.Value;
+            // int ratio = (int)nudRatio.Value;
 
             int usPeriod = 1000000 / freq;
             int usPulse = usPeriod / 100 * ratio;
