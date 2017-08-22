@@ -33,13 +33,12 @@
             this.btnConnect = new System.Windows.Forms.Button();
             this.cbxPortName = new System.Windows.Forms.ComboBox();
             this.lbFreq = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbRation = new System.Windows.Forms.Label();
             this.nudFreq = new System.Windows.Forms.NumericUpDown();
-            this.nudRatio = new System.Windows.Forms.NumericUpDown();
             this.btnStart = new System.Windows.Forms.Button();
             this.tbRatio = new System.Windows.Forms.TrackBar();
+            this.lbRationValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFreq)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRatio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRatio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,16 +96,16 @@
             this.lbFreq.TabIndex = 15;
             this.lbFreq.Text = "Freq(Hz)";
             // 
-            // label1
+            // lbRation
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 126);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 23);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Duty Ratio(%)";
+            this.lbRation.AutoSize = true;
+            this.lbRation.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRation.Location = new System.Drawing.Point(16, 126);
+            this.lbRation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRation.Name = "lbRation";
+            this.lbRation.Size = new System.Drawing.Size(132, 23);
+            this.lbRation.TabIndex = 16;
+            this.lbRation.Text = "Duty Ratio(%)";
             // 
             // nudFreq
             // 
@@ -138,22 +137,6 @@
             0,
             0});
             // 
-            // nudRatio
-            // 
-            this.nudRatio.Font = new System.Drawing.Font("Georgia", 14.25F);
-            this.nudRatio.Location = new System.Drawing.Point(168, 120);
-            this.nudRatio.Name = "nudRatio";
-            this.nudRatio.ReadOnly = true;
-            this.nudRatio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nudRatio.Size = new System.Drawing.Size(76, 29);
-            this.nudRatio.TabIndex = 19;
-            this.nudRatio.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nudRatio.ValueChanged += new System.EventHandler(this.nudRatio_ValueChanged);
-            // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Georgia", 14.25F);
@@ -176,19 +159,30 @@
             this.tbRatio.SmallChange = 5;
             this.tbRatio.TabIndex = 23;
             this.tbRatio.TickFrequency = 5;
+            this.tbRatio.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbRatio.Value = 1;
             this.tbRatio.ValueChanged += new System.EventHandler(this.tbRatio_ValueChanged);
+            // 
+            // lbRationValue
+            // 
+            this.lbRationValue.AutoSize = true;
+            this.lbRationValue.Font = new System.Drawing.Font("Georgia", 14.25F);
+            this.lbRationValue.Location = new System.Drawing.Point(164, 126);
+            this.lbRationValue.Name = "lbRationValue";
+            this.lbRationValue.Size = new System.Drawing.Size(22, 23);
+            this.lbRationValue.TabIndex = 24;
+            this.lbRationValue.Text = "0";
             // 
             // Sample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lbRationValue);
             this.Controls.Add(this.tbRatio);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.nudRatio);
             this.Controls.Add(this.nudFreq);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbRation);
             this.Controls.Add(this.lbFreq);
             this.Controls.Add(this.lbPortName);
             this.Controls.Add(this.btnConnect);
@@ -199,10 +193,9 @@
             this.MaximizeBox = false;
             this.Name = "Sample";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sample";
+            this.Text = "Fizzy Led Controler Sample";
             this.Load += new System.EventHandler(this.Sample_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudFreq)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRatio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbRatio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,11 +208,11 @@
         private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.ComboBox cbxPortName;
         private System.Windows.Forms.Label lbFreq;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbRation;
         private System.Windows.Forms.NumericUpDown nudFreq;
-        private System.Windows.Forms.NumericUpDown nudRatio;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TrackBar tbRatio;
+        private System.Windows.Forms.Label lbRationValue;
     }
 }
 

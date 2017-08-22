@@ -100,6 +100,9 @@ namespace Sample
 
         private void Sample_Load(object sender, EventArgs e)
         {
+            Welcome GW_SplanshForm = new Welcome();
+            GW_SplanshForm.ShowDialog(); 
+
             InitVariables();
             InitControls();
         }
@@ -113,6 +116,10 @@ namespace Sample
 
             btnStart.Text = !this.isRunning ? "Start" : "Stop";
             btnStart.Enabled = this.device.IsOpen;
+
+            tbRatio.Enabled = !this.isRunning;
+            lbRationValue.Text = tbRatio.Value.ToString();
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -164,10 +171,12 @@ namespace Sample
 
         private void tbRatio_ValueChanged(object sender, EventArgs e)
         {
-            if (this.isRunning)
-            {
-                Start();
-            }
+            //if (this.isRunning)
+            //{
+            //    // Stop();
+            //    Start();
+            //}
+            lbRationValue.Text = tbRatio.Value.ToString();
         }   
 
     }
